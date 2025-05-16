@@ -8,8 +8,8 @@ const TodosList = ({ todo, dispatch }) => {
       />
       <span>{todo.text}</span>
       <button
-        onClick={() => dispatch({ type: "delete", id: todo.id })}
         disabled={!todo.complete}
+        onClick={() => dispatch({ type: "delete", id: todo.id })}
       >
         Remove
       </button>
