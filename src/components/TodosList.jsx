@@ -27,19 +27,20 @@ const TodosList = ({ todo, dispatch }) => {
           <button onClick={handleSave}>Save</button>
         </>
       ) : (
-        <>
+        <div className="todo-left">
           <input
             type="checkbox"
             checked={todo?.complete || false}
             onChange={handleToggle}
           />
           <span>{todo?.text}</span>
-          <button disabled={!todo?.complete} onClick={handleDelete}>
-            Remove
-          </button>
-          <button onClick={handleEdit}>Edit</button>
-        </>
+        </div>
       )}
+      <div className="todo-right"></div>
+      <button onClick={handleEdit}>Edit</button>
+      <button disabled={!todo?.complete} onClick={handleDelete}>
+        Remove
+      </button>
     </li>
   );
 };

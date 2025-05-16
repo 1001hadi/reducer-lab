@@ -5,6 +5,131 @@
   text-align: center;
 }
 
-li {
+.container {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #1d3557;
+  border-radius: 5px;
+  background-color: #457b9d;
+}
+
+h1 {
+  color: #1d3557;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+form {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  background-color: #a8dadc;
+  color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  background-color: #1d3557;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button[type="submit"]:hover {
+  background-color: #102749;
+}
+
+ul {
   list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #898787;
+  color: #333;
+  font-weight: bold;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.todo-left {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.todo-left span {
+  font-size: 18px;
+}
+
+.todo-left span.complete {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.todo-right button,
+li > button {
+  padding: 7px 10px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Edit btn */
+li > button:first-of-type {
+  background-color: #f1faee;
+  color: #1d3557;
+  font-weight: bold;
+}
+
+li > button:first-of-type:hover {
+  background-color: #d0d5cf;
+}
+
+/* Delete btn */
+li > button:last-of-type {
+  background-color: #93141f;
+  color: white;
+}
+
+li > button:last-of-type:hover {
+  background-color: #b40a04;
+}
+
+li > button:disabled {
+  background-color: #619eab;
+  cursor: not-allowed;
+}
+
+/* update field */
+li > input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-right: 8px;
 }

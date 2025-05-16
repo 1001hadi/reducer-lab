@@ -20,6 +20,7 @@ const TodoForm = ({ onAddTodo }) => {
             setTodo(e.target.value);
           }}
           placeholder="Add todo..."
+          maxLength="50"
         />
         <button type="submit">Add Todo</button>
       </form>
