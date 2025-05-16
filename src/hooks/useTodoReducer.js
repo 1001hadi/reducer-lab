@@ -16,6 +16,14 @@ const todoReducer = (state, action) => {
       return state.map((todo) => {
         todo.id === action.id ? { ...todo, isEdit: true } : todo;
       });
+    case "update":
+      return state.map((todo) =>
+        todo.id === action.id ? { ...todo, text: action.text } : todo
+      );
+    case "save":
+      return state.map((todo) =>
+        todo.id === action.id ? { ...todo, isEdit: false } : todo
+      );
     default:
       return state;
   }
