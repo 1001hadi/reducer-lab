@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import TodoForm from "./components/TodoForm";
 import "./App.css";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <div className="container">
         <Header />
+        <TodoForm />
       </div>
     </>
   );
