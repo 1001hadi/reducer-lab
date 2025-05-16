@@ -5,7 +5,7 @@ const TodoForm = ({ onAddTodo }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (todo.trim()) {
+    if (todo) {
       onAddTodo(todo);
       setTodo("");
     }

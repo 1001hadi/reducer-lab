@@ -1,7 +1,8 @@
 import useTodoReducer from "./hooks/useTodoReducer";
 import { Header } from "./components/Header";
-import TodoForm from "./components/TodoForm";
 import "./App.css";
+import TodoForm from "./components/TodoForm";
+import TodosList from "./components/TodosList";
 
 function App() {
   const [todos, dispatch] = useTodoReducer();
@@ -15,10 +16,9 @@ function App() {
         <Header />
         <TodoForm onAddTodo={handleAddTodo} />
         <ul>
-          {todos.map((todo) => {
-            <li key={todo.id}>{todo.text}</li>;
-            console.log(todo.text);
-          })}
+          {todos.map((todo) => (
+            <TodosList key={todo.id} todo={todo} />
+          ))}
         </ul>
       </div>
     </>
