@@ -16,9 +16,10 @@ function App() {
         <Header />
         <TodoForm onAddTodo={handleAddTodo} />
         <ul>
-          {todos.map((todo) => (
-            <TodosList key={todo.id} todo={todo} dispatch={dispatch} />
-          ))}
+          {todos &&
+            todos.map((todo) => (
+              <TodosList key={todo.id} todo={todo} dispatch={dispatch} />
+            ))}
         </ul>
       </div>
     </>

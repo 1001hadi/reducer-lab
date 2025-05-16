@@ -11,30 +11,30 @@ const TodosList = ({ todo, dispatch }) => {
     return dispatch({ type: "edit", id: todo.id });
   }
 
+  function handleUpdate(e) {
+    return dispatch({ type: "update", id: todo.id, text: e.target.value });
+  }
+
+  function handleSave() {
+    return dispatch({ type: "save", id: todo.id });
+  }
+
   return (
     <li>
-      {todo.isEdit ? (
+      {todo?.isEdit ? (
         <>
-          <input
-            type="text"
-            value={todo.text}
-            onChange={(e) =>
-              dispatch({ type: "update", id: todo.id, text: e.target.value })
-            }
-          />
-          <button onClick={() => dispatch({ type: "save", id: todo.id })}>
-            Save
-          </button>
+          <input type="text" value={todo?.text || ""} onChange={handleUpdate} />
+          <button onClick={handleSave}>Save</button>
         </>
       ) : (
         <>
           <input
             type="checkbox"
-            checked={todo.complete}
+            checked={todo?.complete || false}
             onChange={handleToggle}
           />
-          <span>{todo.text}</span>
-          <button disabled={!todo.complete} onClick={handleDelete}>
+          <span>{todo?.text}</span>
+          <button disabled={!todo?.complete} onClick={handleDelete}>
             Remove
           </button>
           <button onClick={handleEdit}>Edit</button>
